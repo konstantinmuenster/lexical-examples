@@ -6,22 +6,25 @@ import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 
-import { $createParagraphNode, $createTextNode } from "lexical";
-import { $initEditorContent, logError, theme } from "lexical-examples-utils";
+import {
+  $initEditorContent,
+  $createDefaultParagraphNode,
+  logError,
+  theme,
+} from "lexical-examples-utils";
+import { $createCommentNode, CommentNode } from "./nodes/Comment";
 
-const getInitialNodes = () => [
-  $createParagraphNode().append(
-    $createTextNode(
-      "Mollit sit quis aliquip tempor ex anim exercitation duis aute tempor enim commodo minim aliqua mollit. Cillum non deserunt sit adipisicing id ad et nisi sint est ut voluptate magna. Eu nostrud sunt laboris sint veniam. In magna proident id proident."
-    )
-  ),
+const getInitialContent = () => [
+  $createDefaultParagraphNode(),
+  $createCommentNode("This is a comment node with a nested editor!"),
 ];
 
 const config: InitialConfigType = {
   namespace: "lexical",
+  nodes: [CommentNode], // 👈 CommentNode is a custom node type with a nested editor
   onError: logError,
   theme,
-  editorState: () => $initEditorContent({ nodes: getInitialNodes() }),
+  editorState: () => $initEditorContent({ nodes: getInitialContent() }),
 };
 
 export function Editor() {

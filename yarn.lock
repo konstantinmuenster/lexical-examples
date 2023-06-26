@@ -281,7 +281,7 @@
   dependencies:
     "@lexical/utils" "0.11.1"
 
-"@lexical/markdown@0.11.1", "@lexical/markdown@^0.11.1":
+"@lexical/markdown@0.11.1":
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/@lexical/markdown/-/markdown-0.11.1.tgz#fe6086b46ac9bcfa702e135557709a260c56404f"
   integrity sha512-yk8q2808PJrW7yT5ym/4j78lkNCdi/rWmbZN49tNtetWClddHPEYifdOfuSsf2aAOx65/23B7zHs87BuyzXWFw==
