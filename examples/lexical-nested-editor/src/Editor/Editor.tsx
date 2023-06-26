@@ -27,7 +27,7 @@ const config: InitialConfigType = {
   editorState: () => $initEditorContent({ nodes: getInitialContent() }),
 };
 
-export function Editor() {
+export const Editor = () => {
   return (
     <LexicalComposer initialConfig={config}>
       <RichTextPlugin
@@ -37,4 +37,4 @@ export function Editor() {
       />
     </LexicalComposer>
   );
-}
+};

@@ -95,7 +95,7 @@ export class CommentNode extends DecoratorNode<ReactNode> {
   }
 }
 
-export function $createCommentNode(comment?: string): CommentNode {
+export const $createCommentNode = (comment?: string): CommentNode => {
   const editor = createEditor();
 
   if (comment) {
@@ -110,8 +110,8 @@ export function $createCommentNode(comment?: string): CommentNode {
   }
 
   return new CommentNode(editor);
-}
+};
 
-export function $isCommentNode(node: LexicalNode): node is CommentNode {
+export const $isCommentNode = (node: LexicalNode): node is CommentNode => {
   return node.__type === CommentNode.getType();
-}
+};

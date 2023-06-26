@@ -7,13 +7,13 @@ import "./App.css";
 
 import { Editor } from "./Editor";
 
-function App() {
+const App = () => {
   return (
     <EditorContainer name="Nested editor">
       <Editor />
     </EditorContainer>
   );
-}
+};
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
