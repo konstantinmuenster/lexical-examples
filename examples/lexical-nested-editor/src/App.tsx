@@ -9,7 +9,7 @@ import { Editor } from "./Editor";
 
 function App() {
   return (
-    <EditorContainer name="Nested Editor">
+    <EditorContainer name="Nested editor">
       <Editor />
     </EditorContainer>
   );

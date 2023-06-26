@@ -1,38 +1,37 @@
-import { LexicalComposer } from "@lexical/react/LexicalComposer";
+import {
+  InitialConfigType,
+  LexicalComposer,
+} from "@lexical/react/LexicalComposer";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 
-import { $getRoot, $createParagraphNode, $createTextNode } from "lexical";
+import { $createParagraphNode, $createTextNode } from "lexical";
+import { $initEditorContent, logError, theme } from "lexical-examples-utils";
 
-const config = {
-  theme: {
-    root: "editor",
-  },
+const getInitialNodes = () => [
+  $createParagraphNode().append(
+    $createTextNode(
+      "Mollit sit quis aliquip tempor ex anim exercitation duis aute tempor enim commodo minim aliqua mollit. Cillum non deserunt sit adipisicing id ad et nisi sint est ut voluptate magna. Eu nostrud sunt laboris sint veniam. In magna proident id proident."
+    )
+  ),
+];
+
+const config: InitialConfigType = {
   namespace: "lexical",
-  onError: (error: any) => {
-    console.error(error);
-  },
-  editorState: () => {
-    const root = $getRoot();
-    if (root.getFirstChild() === null) {
-      const paragraph = $createParagraphNode();
-      paragraph.append($createTextNode("paragraph"));
-      root.append(paragraph);
-    }
-  },
-};
-
-export const commonTextPluginProps = {
-  contentEditable: <ContentEditable />,
-  ErrorBoundary: LexicalErrorBoundary,
-  placeholder: null,
+  onError: logError,
+  theme,
+  editorState: () => $initEditorContent({ nodes: getInitialNodes() }),
 };
 
 export function Editor() {
   return (
     <LexicalComposer initialConfig={config}>
-      <RichTextPlugin {...commonTextPluginProps} />
+      <RichTextPlugin
+        contentEditable={<ContentEditable />}
+        ErrorBoundary={LexicalErrorBoundary}
+        placeholder={null}
+      />
     </LexicalComposer>
   );
 }

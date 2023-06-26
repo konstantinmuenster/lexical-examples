@@ -1,18 +1,19 @@
 import { defineConfig, Options } from "tsup";
 
+const env = process.env.NODE_ENV;
+
 export default defineConfig((options: Options) => ({
   entry: {
-    index: "src/index.tsx",
-    tailwind: "tailwind.config.js",
+    index: "src/index.ts",
   },
   treeshake: true,
   splitting: true,
-  skipNodeModulesBundle: true,
   format: ["esm", "cjs"],
-  externals: ["react", "react-dom"],
+  skipNodeModulesBundle: true,
   dts: true,
-  minify: true,
-  outDir: "dist",
   clean: true,
+  minify: true,
+  target: "es2020",
+  outDir: "dist",
   ...options,
 }));
