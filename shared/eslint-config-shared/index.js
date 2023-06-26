@@ -1,8 +1,14 @@
 module.exports = {
-  extends: ["turbo", "prettier"],
+  extends: [
+    "turbo",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+  ],
+  parser: "@typescript-eslint/parser",
+  plugins: ["@typescript-eslint"],
   parserOptions: {
     sourceType: "module",
-    parser: "babel-eslint",
     ecmaVersion: 2018,
     ecmaFeatures: {
       jsx: true,
