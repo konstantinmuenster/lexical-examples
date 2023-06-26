@@ -1,0 +1,44 @@
+{
+  "name": "lexical-examples-ui",
+  "version": "1.0.0",
+  "description": "",
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./tailwind": {
+      "import": "./dist/tailwind.mjs",
+      "require": "./dist/tailwind.js",
+      "types": "./dist/tailwind.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "yarn build --watch",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx|md|mdx)\"",
+    "format": "yarn prettier --write"
+  },
+  "dependencies": {
+    "lucide-react": "^0.252.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^7.32.0",
+    "eslint-config-shared": "*",
+    "prettier-plugin-tailwindcss": "^0.3.0",
+    "tsconfig": "*",
+    "tsup": "^5.12.1",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^4.5.2",
+    "postcss": "^8.4.24",
+    "vite": "^4.3.9"
+  }
+}
