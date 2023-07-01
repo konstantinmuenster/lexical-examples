@@ -13,7 +13,7 @@
     "dev": "tsup --watch",
     "check-types": "tsc --noEmit",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx|md|mdx)\"",
+    "prettier": "prettier --ignore-path ../../.gitignore \"**/*.+(js|json|ts|tsx|md|mdx)\"",
     "format": "yarn prettier --write"
   },
   "dependencies": {
