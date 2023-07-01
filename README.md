@@ -1,4 +1,4 @@
-![lexical examples](cover.png)
+<img src="cover.png" width="520px" alt="lexical-examples" />
 
 # `lexical-examples`
 
