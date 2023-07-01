@@ -4,6 +4,9 @@ import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 
+import { themeNestedEditor as theme } from "lexical-examples-utils";
+import { Comment as StyledComment } from "lexical-examples-ui";
+
 import { Comment as CommentType } from "./CommentNode";
 import { useEditorAutoSave } from "../../context/update";
 
@@ -15,8 +18,8 @@ export const Comment: React.FC<CommentProps> = ({ comment }) => {
   const { emitUpdate } = useEditorAutoSave();
 
   return (
-    <div className="relative rounded-xl bg-yellow-200 px-1 py-4 after:absolute after:-right-8 after:-top-4 after:text-2xl after:font-bold after:uppercase after:content-['💬']">
-      <LexicalNestedComposer initialEditor={comment}>
+    <StyledComment>
+      <LexicalNestedComposer initialTheme={theme} initialEditor={comment}>
         <PlainTextPlugin
           contentEditable={<ContentEditable />}
           ErrorBoundary={LexicalErrorBoundary}
@@ -24,6 +27,6 @@ export const Comment: React.FC<CommentProps> = ({ comment }) => {
         />
         <OnChangePlugin onChange={emitUpdate} ignoreSelectionChange />
       </LexicalNestedComposer>
-    </div>
+    </StyledComment>
   );
 };

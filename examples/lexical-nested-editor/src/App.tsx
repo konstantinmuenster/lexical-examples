@@ -1,17 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import { EditorContainer } from "lexical-examples-ui";
+import { AppContainer } from "lexical-examples-ui";
 
 import "./App.css";
 
+import { AppConfig } from "./App.config";
 import { Editor } from "./Editor";
 
 const App = () => {
   return (
-    <EditorContainer name="Nested editor">
+    <AppContainer {...AppConfig}>
       <Editor />
-    </EditorContainer>
+    </AppContainer>
   );
 };
 
