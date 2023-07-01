@@ -1,9 +1,8 @@
-import { ComponentType } from "react";
 import { Box } from "lucide-react";
 
 type HeaderProps = {
   name: string;
-  Description?: ComponentType;
+  Description?: React.MemoExoticComponent<React.ComponentType>;
 };
 
 export const Header: React.FC<HeaderProps> = ({ name, Description }) => {

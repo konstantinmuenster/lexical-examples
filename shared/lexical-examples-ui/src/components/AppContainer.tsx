@@ -1,12 +1,10 @@
-import { ComponentType } from "react";
-
 import { ExternalLinks } from "./ExternalLinks";
 import { Header } from "./Header";
 
 type AppContainerProps = {
   name: string;
   slug: string;
-  Description?: ComponentType;
+  Description?: React.MemoExoticComponent<React.ComponentType>;
   children: React.ReactNode;
 };
 

@@ -16,5 +16,5 @@ const Description = memo(() => (
 export const AppConfig = {
   slug: pkg.name,
   name: "Shared Update",
-  description: Description,
+  Description: Description,
 };
