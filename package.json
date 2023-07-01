@@ -4,7 +4,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,md,js,json}\""
   },
   "devDependencies": {
     "eslint": "^7.32.0",
