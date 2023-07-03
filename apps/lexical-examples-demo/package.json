@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "lexical-nested-editor": "*",
+    "lexical-shared-history": "*",
+    "lexical-shared-update": "*",
     "lucide-react": "^0.258.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

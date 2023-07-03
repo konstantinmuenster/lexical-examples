@@ -7,8 +7,18 @@ import { Example } from "./components/Example";
 const examples = [
   {
     id: "lexical-nested-editor",
-    title: "Lexical Nested Editor",
+    title: "Nested Editor",
     Component: lazy(() => import("./examples/LexicalNestedEditor")),
+  },
+  {
+    id: "lexical-shared-history",
+    title: "Shared History",
+    Component: lazy(() => import("./examples/LexicalSharedHistory")),
+  },
+  {
+    id: "lexical-shared-update",
+    title: "Shared Update",
+    Component: lazy(() => import("./examples/LexicalSharedUpdate")),
   },
 ];
 

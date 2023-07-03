@@ -21,12 +21,12 @@ export const ExampleList: React.FC<ExampleListProps> = ({
           <Box size={24} /> lexical-examples
         </h1>
       </div>
-      <div className="flex-col items-center justify-center gap-4">
+      <div className="flex-col items-center justify-center">
         {examples.map(({ id, title }) => {
           return (
             <button
               key={id}
-              className="group flex w-full items-center justify-between gap-2 rounded-lg border-2 border-gray-100 bg-gray-100 px-6 py-2 text-left font-medium transition-all hover:border-gray-200"
+              className="group my-2 flex w-full items-center justify-between gap-2 rounded-lg border-2 border-gray-100 bg-gray-100 px-6 py-2 text-left font-medium transition-all hover:border-gray-200"
               onClick={() => startTransition(() => selectExample(id))}
             >
               {title}{" "}
