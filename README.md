@@ -8,7 +8,9 @@ Lexical has only been released quite recently. It was built with a composability
 
 This repository should exemplify these patterns and hopefully be a helpful resource for developers getting their heads around Lexical.
 
-### [🗂 See all examples](https://github.com/konstantinmuenster/lexical-examples/tree/main/examples)
+### [🕹️ Playground](https://lexical-examples-demo.vercel.app/)
+
+### [🗂 Example directory](https://github.com/konstantinmuenster/lexical-examples/tree/main/examples) 
 
 Every example is reduced to the bare minimum and can be executed on its own. I only ceated a few utility packages to share common functionalities and UI elements.
 
